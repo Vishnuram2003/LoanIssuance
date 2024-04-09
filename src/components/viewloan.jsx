@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios'; // Assuming axios is used for HTTP requests
+import axios from 'axios';
 
 const ViewLoanComponent = () => {
   const [aadhaarNum, setAadhaarNum] = useState('');
@@ -16,7 +16,7 @@ const ViewLoanComponent = () => {
   }, []);
 
   const getLoans = (aadhaar) => {
-    axios.get(`/api/loans/${aadhaar}`) // Adjust URL as needed
+    axios.get(`/api/loans/${aadhaar}`) 
       .then(response => {
         setLoans(response.data);
         response.data.forEach(loan => console.log(loan));
